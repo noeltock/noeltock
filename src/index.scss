@@ -1,0 +1,55 @@
+// Imports
+@import './css/normalize.css';
+
+// Colours
+$c-p: #ff8065;
+$c-s: #0d3b6d;
+
+// Fonts
+$f-p: 'poppins', sans-serif;
+
+// Mobile Breakpoints
+
+// Global
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $f-p;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 30px;
+}
+
+// Header
+.header-wrap {
+  background-color: $c-p;
+  background: linear-gradient(to right, $c-s, $c-p);
+  height: 600px;
+  clip-path: polygon(
+    0 0,
+    /* left top */ 100% 0,
+    /* right top */ 100% 80%,
+    /* right bottom */ 0 100% /* left bottom */
+  );
+  z-index: 1; /* pop it above next div */
+}
+
+.header-headshot {
+  background: url('./img/nt.jpg') no-repeat;
+  background-size: auto 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  filter: grayscale(100%);
+  opacity: 0.2;
+}
+
+// Content
+
+p {
+  font-size: 1.2rem;
+}
