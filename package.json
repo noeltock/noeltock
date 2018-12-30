@@ -6,9 +6,12 @@
     "react-scripts": "2.1.2"
   },
   "dependencies": {
+    "d3": "^5.7.0",
+    "deck.gl": "^6.3.2",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-map-gl": "^4.0.6"
   },
   "scripts": {
     "start": "react-scripts start",

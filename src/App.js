@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
+import Header from './components/Header';
+import FlightsMap from './components/FlightsMap';
 import './index.scss';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <div className="header-wrap">
-            <div className="header-headshot"></div>  
-          </div>
-        </header>
+        <Header />
         <div>
-          <p>Hi, my name is Noel <span role="img" aria-label="Snowman">👋</span></p>
+          <p>
+            Hi, my name is Noel 
+            <span role="img" aria-label="Waving">
+              &#x1F44B;
+            </span>
+          </p>
         </div>
+        <FlightsMap />
       </div>
     );
   }
