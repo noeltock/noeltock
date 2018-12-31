@@ -8,6 +8,7 @@
   "dependencies": {
     "d3": "^5.7.0",
     "deck.gl": "^6.3.2",
+    "immutability-helper": "^2.9.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
