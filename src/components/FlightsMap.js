@@ -16,19 +16,14 @@ const DECK_VIEW_STATE = {
   latitude: 40,
   zoom: 3,
   minZoom: 3,
-  maxZoom: 4,
+  maxZoom: 3,
   pitch: 50,
   bearing: 30,
   continuousWorld: false,
   noWrap: true,
 };
 const DECK_CONTROLS = {
-  scrollZoom: false,
-  dragPan: false,
-  doubleClickZoom: false,
-  touchZoom: false,
-  touchRotate: false,
-  keyboard: false,
+
 }
 
 const tileLayer = {
@@ -90,7 +85,7 @@ class FlightsMap extends Component {
 
   _rotateCamera() {
     // change bearing by 120 degrees.
-    const bearing = this.state.viewState.bearing + 120;
+    const bearing = this.state.viewState.bearing - 120;
     this.setState({
       viewState: {
         ...this.state.viewState,
