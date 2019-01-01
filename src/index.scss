@@ -17,6 +17,8 @@ $f-p: 'poppins', sans-serif;
 }
 
 body {
+  background-color: $c-p;
+  background: linear-gradient(to right, $c-s, $c-p);
   margin: 0;
   padding: 0;
   font-family: $f-p;
@@ -25,18 +27,33 @@ body {
   padding: 30px;
 }
 
+// Global Block Styles
+.block {
+  max-width: 800px;
+  box-shadow: 0 5px 10px darken(rgba(24, 61, 109, 0.1), 20%), 0 20px 40px rgba(24, 61, 109, 0.3);
+  margin: 0 auto 40px;
+  padding: 40px;
+  border-radius: 3px;
+  color: $c-s;
+
+  h2:first-child {
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+
+}
+
 // Header
 .header-wrap {
-  background-color: $c-p;
-  background: linear-gradient(to right, $c-s, $c-p);
-  height: 600px;
-  clip-path: polygon(
-    0 0,
-    /* left top */ 100% 0,
-    /* right top */ 100% 80%,
-    /* right bottom */ 0 100% /* left bottom */
-  );
+  height: 500px;
   z-index: 1; /* pop it above next div */
+
+
+
 }
 
 .header-headshot {
@@ -56,7 +73,9 @@ p {
 
 // Flights Map
 .flight-map-wrap {
-  background: #c9d2d3;
+  max-width: 1200px!important;
+  background: transparent;
   position: relative;
   height: 600px;
+  overflow: hidden;
 }

@@ -13,11 +13,12 @@ const MAPBOX_ACCESS_TOKEN =
 const initialViewState = {
   longitude: 8.55,
   latitude: 20,
-  zoom: 1,
-  minZoom: 1,
-  maxZoom: 4,
+  zoom: 2,
+  minZoom: 2,
+  maxZoom: 16,
   pitch: 45,
-  bearing: 10
+  bearing: 10,
+  style: "mapbox://styles/noeltock/cjqdgtwo03wry2rpn5aee5nmf"
 };
 
 let checkStartEnd = segment => {
@@ -33,9 +34,9 @@ let checkStartEnd = segment => {
 
 let checkHome = code => {
   if (code === 'ZRH') {
-    return [254, 127, 102, 255];
+    return [254, 127, 102, 60];
   } else {
-    return [242, 111, 84, 255];
+    return [242, 111, 84, 60];
   }
 }
 
@@ -124,7 +125,7 @@ class FlightsMap extends Component {
     ];
 
     return (
-      <div className="flight-map-wrap">
+      <div className="flight-map-wrap block">
         <DeckGL
           height={600}
           initialViewState={initialViewState}
@@ -134,7 +135,7 @@ class FlightsMap extends Component {
         >
           <StaticMap
             mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
-            mapStyle="mapbox://styles/mapbox/light-v9"
+            mapStyle="mapbox://styles/noeltock/cjqdgtwo03wry2rpn5aee5nmf"
           />
         </DeckGL>
       </div>

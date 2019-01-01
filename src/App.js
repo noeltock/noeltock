@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import FlightsMap from './components/FlightsMap';
+import Credits from './components/Credits';
 import './index.scss';
 
 class App extends Component {
@@ -10,13 +11,11 @@ class App extends Component {
         <Header />
         <div>
           <p>
-            Hi, my name is Noel 
-            <span role="img" aria-label="Waving">
-              &#x1F44B;
-            </span>
+
           </p>
         </div>
         <FlightsMap />
+        <Credits />
       </div>
     );
   }
