@@ -6,7 +6,8 @@ $c-p: #ff8065;
 $c-s: #0d3b6d;
 
 // Fonts
-$f-p: 'poppins', sans-serif;
+$f-h: "Sentinel SSm A", "Sentinel SSm B", serif;
+$f-r: "Ideal Sans A", "Ideal Sans B", sans-serif;
 
 // Mobile Breakpoints
 
@@ -14,6 +15,7 @@ $f-p: 'poppins', sans-serif;
 
 * {
   box-sizing: border-box;
+  // outline: 1px solid rgba(0,0,0,0.1);
 }
 
 html, body {
@@ -22,40 +24,29 @@ html, body {
 }
 
 body {
-  background-color: $c-p;
-  background: linear-gradient(to right, $c-s, #ed6550);
   margin: 0;
   padding: 0;
-  font-family: $f-p;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
 }
 
+// React wrapping
 .App, #root {
   position: relative;
-  min-height: 100%;
   height: 100%;
-  overflow: hidden;
+  min-height: 100%;
 }
 
 // Global Block Styles
-.block {
-  max-width: 800px;
-  box-shadow: 0 5px 10px darken(rgba(24, 61, 109, 0.1), 20%), 0 20px 40px rgba(24, 61, 109, 0.3);
-  margin: 0 auto 40px;
-  padding: 40px;
-  border-radius: 3px;
-  color: $c-s;
+.split {
+  min-height: 100%;
+  position: relative;
+  display: flex;
 
-  h2:first-child {
-    margin-top: 0;
+  .col {
+    position: relative;
+    flex: 1;
   }
-
-  h2 {
-    font-size: 2em;
-    font-weight: 600;
-  }
-
 }
 
 // Header
@@ -64,28 +55,50 @@ body {
   z-index: 1; /* pop it above next div */
 }
 
-.header-headshot {
-  background: url('./img/nt.jpg') no-repeat;
-  background-size: auto 100%;
+// Flights Map
+.flight-map-wrap {
+  position: relative;
+  width: 100%;
   height: 100%;
-  mix-blend-mode: screen;
-  filter: grayscale(100%);
-  opacity: 0.2;
+  z-index: 1;
+  background-color: $c-p;
+  background: linear-gradient(to right, $c-s, #ed6550);
+
+  /*
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: url('./img/nt-duotone.jpg') no-repeat;
+    background-size: auto 100%;
+    height: 100%;
+    width: 80%;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%);
+    opacity: 0.2;
+    z-index: 1000;
+  }
+  */
+
+}
+
+// Typography
+
+h2 {
+  font-family: $f-h;
 }
 
 // Content
-
-p {
+.content {
+  font-family: $f-r;
+  font-weight: 300;
   font-size: 1.2rem;
-}
-
-// Flights Map
-.flight-map-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: -100px;
-  z-index: 0;
-  overflow: hidden;
+  font-weight: 200;
+  line-height: 1.6;
+  margin: 40px auto;
+  max-width: 600px;
+  background:#fff;
+  z-index: 10;
 }

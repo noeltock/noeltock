@@ -22,15 +22,18 @@ const DECK_VIEW_STATE = {
   continuousWorld: false,
   noWrap: true,
 };
+
+// Viewport Controls
 const DECK_CONTROLS = {
-
+  scrollZoom: false,
+  dragPan: false,
+  doubleClickZoom: false,
+  touchZoom: false,
+  touchRotate: false,
+  keyboard: false,
 }
 
-const tileLayer = {
-  continuousWorld: false,
-  noWrap: true
-}
-
+// Helper: Check if flight segment has both data points necessary
 let checkStartEnd = segment => {
   if (
     segment.hasOwnProperty('start_airport_latitude') &&
@@ -42,6 +45,7 @@ let checkStartEnd = segment => {
   }
 };
 
+// Helper: Check if home airport
 let checkHome = code => {
   if (code === 'ZRH') {
     return [254, 127, 102, 120];
@@ -50,6 +54,7 @@ let checkHome = code => {
   }
 }
 
+// Helper: Get travel distance in km
 let getDistance = (lat1, lon1, lat2, lon2) => {
   var p = 0.017453292519943295;    // Math.PI / 180
   var c = Math.cos;
@@ -58,7 +63,6 @@ let getDistance = (lat1, lon1, lat2, lon2) => {
           (1 - c((lon2 - lon1) * p))/2;
   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
 }
-
 
 class FlightsMap extends Component {
   // Set defaults
@@ -101,6 +105,7 @@ class FlightsMap extends Component {
     this.fetchData();
   }
 
+  // Put together the flight objects from the raw Tripit data
   createFlight = (s, i) => {
 
     // Construct Flight Array
@@ -130,6 +135,7 @@ class FlightsMap extends Component {
     // console.log(this.state.flights.reduce((total, obj) => obj.distance + total,0))
   };
 
+  // Grab data
   fetchData = () => {
     d3.json('./data/response.json', {
       headers: {
@@ -186,7 +192,6 @@ class FlightsMap extends Component {
           <StaticMap
             mapboxApiAccessToken={MAPBOX_ACCESS_TOKEN}
             mapStyle="mapbox://styles/noeltock/cjqdnezwg010d2so0nrdgaj48"
-            tileLayer={tileLayer}
           />
         </DeckGL>
       </div>
