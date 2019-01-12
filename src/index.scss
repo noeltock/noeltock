@@ -4,6 +4,7 @@
 // Colours
 $c-p: #ff8065;
 $c-s: #0d3b6d;
+$c-b: #555555;
 
 // Fonts
 $f-h: "Sentinel SSm A", "Sentinel SSm B", serif;
@@ -26,8 +27,17 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  // -webkit-font-smoothing: antialiased;
-  // -moz-osx-font-smoothing: grayscale;
+  color: $c-b;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.dark-bg {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 // React wrapping
@@ -64,31 +74,39 @@ body {
   background-color: $c-p;
   background: linear-gradient(to right, $c-s, #ed6550);
 
-  /*
+
   &:after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     bottom: 0;
     background: url('./img/nt-duotone.jpg') no-repeat;
     background-size: auto 100%;
-    height: 100%;
-    width: 80%;
-    mix-blend-mode: multiply;
-    filter: grayscale(100%);
-    opacity: 0.2;
     z-index: 1000;
+    opacity: 0;
   }
-  */
+
 
 }
 
 // Typography
 
-h2 {
+h1, h2, h3 {
   font-family: $f-h;
+
 }
+
+h1 {
+  font-size: 2em;
+  font-weight: 200;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
 
 // Content
 .content {
@@ -101,4 +119,22 @@ h2 {
   max-width: 600px;
   background:#fff;
   z-index: 10;
+}
+
+a {
+  color: $c-b;
+  position: relative;
+  text-decoration: none;
+  z-index: 1;
+
+  &:before {
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    right: 0;
+    content: '';
+    border-bottom: solid 5px fade-out($c-p, 0.6);
+    z-index: -1;
+  }
+
 }
