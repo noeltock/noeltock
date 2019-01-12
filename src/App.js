@@ -5,15 +5,21 @@ import Credits from './components/Credits'
 import './index.scss'
 import ntDuotone from './img/nt-duotone.jpg'
 import ReactGA from 'react-ga'
+import { Helmet } from 'react-helmet'
 
-ReactGA.initialize('UA-40085355-1');
-ReactGA.pageview(window.location.pathname + window.location.search);
+ReactGA.initialize('UA-40085355-1')
+ReactGA.pageview(window.location.pathname + window.location.search)
 
 // <img src={ntDuotone} alt="Logo" />
 class App extends Component {
   render () {
     return (
       <div className='App'>
+        <Helmet>
+          <html lang='en' />
+          <meta charSet='utf-8' />
+          <title>Noel Tock</title>
+        </Helmet>
         <div className='split'>
           <div className='col'>
             <div className='content'>
