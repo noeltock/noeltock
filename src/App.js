@@ -1,18 +1,25 @@
 // Core
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 // Components
-import Navigation from "./components/Navigation";
-//import Header from "./components/Header";
 import FlightsMap from "./components/FlightsMap";
+import Navigation from "./components/Navigation";
 //import Credits from "./components/Credits";
 
 // Components - Pages
 import PageHome from "./components/PageHome";
 import PageAbout from "./components/PageAbout";
+import PageBuilt from "./components/PageBuilt";
+import Page404 from "./components/Page404";
 
 // Other
 import "./index.scss";
@@ -37,8 +44,19 @@ class App extends Component {
             <Router>
               <div>
                 <Navigation />
-                <Route path="/" exact component={PageHome} />
-                <Route path="/about/" exact component={PageAbout} />
+                <TransitionGroup>
+                  <CSSTransition
+                    timeout={{ enter: 300, exit: 300 }}
+                    classNames={"fade"}
+                  >
+                    <Switch location={location}>
+                      <Route path="/" exact component={PageHome} />
+                      <Route path="/about/" exact component={PageAbout} />
+                      <Route path="/built/" exact component={PageBuilt} />
+                      <Route component={Page404} />
+                    </Switch>
+                  </CSSTransition>
+                </TransitionGroup>
               </div>
             </Router>
           </div>

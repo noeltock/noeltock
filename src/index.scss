@@ -1,5 +1,5 @@
 // Imports
-@import './css/normalize.css';
+@import "./css/normalize.css";
 
 // Colours
 $c-p: #ff8065;
@@ -7,8 +7,8 @@ $c-s: #0d3b6d;
 $c-b: #555555;
 
 // Fonts
-$f-h: 'Sentinel SSm A', 'Sentinel SSm B', serif;
-$f-r: 'Ideal Sans A', 'Ideal Sans B', sans-serif;
+$f-h: "Sentinel SSm A", "Sentinel SSm B", serif;
+$f-r: "Ideal Sans A", "Ideal Sans B", sans-serif;
 
 // Mobile Breakpoints
 
@@ -77,13 +77,13 @@ img {
   background: linear-gradient(to right, $c-s, #ed6550);
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('./img/nt-duotone.jpg') no-repeat;
+    background: url("./img/nt-duotone.jpg") no-repeat;
     background-size: auto 100%;
     z-index: 1000;
     opacity: 0;
@@ -105,6 +105,39 @@ h1 {
 
 h2 {
   font-size: 1.2em;
+}
+
+// Nav
+
+nav {
+  font-family: $f-r;
+  font-weight: 400;
+  padding: 20px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.2);
+
+  a {
+    display: inline-block;
+    font-size: 1.2rem;
+    margin-right: 20px;
+  }
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
 }
 
 // Content
@@ -131,7 +164,7 @@ a {
     left: 0;
     bottom: 2px;
     right: 0;
-    content: '';
+    content: "";
     border-bottom: solid 5px fade-out($c-p, 0.6);
     z-index: -1;
   }
