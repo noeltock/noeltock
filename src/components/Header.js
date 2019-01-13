@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Header extends Component {
   render() {
@@ -19,5 +19,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-// <div className="header-headshot"></div>

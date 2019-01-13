@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
-import update from 'immutability-helper';
-import * as d3 from 'd3';
-import DeckGL, { ArcLayer, LinearInterpolator } from 'deck.gl';
-import { StaticMap } from 'react-map-gl';
-import 'mapbox-gl/src/css/mapbox-gl.css';
+import React, { Component } from "react";
+import update from "immutability-helper";
+import * as d3 from "d3";
+import DeckGL, { ArcLayer, LinearInterpolator } from "deck.gl";
+import { StaticMap } from "react-map-gl";
+import "mapbox-gl/src/css/mapbox-gl.css";
 
 // API key
 const MAPBOX_ACCESS_TOKEN =
-  'pk.eyJ1Ijoibm9lbHRvY2siLCJhIjoiY2pwcGhidTJuMDI2eDN3b2EweHR1dWZzaCJ9.12aAGzu2My2Ymp7WBjbSKg';
+  "pk.eyJ1Ijoibm9lbHRvY2siLCJhIjoiY2pwcGhidTJuMDI2eDN3b2EweHR1dWZzaCJ9.12aAGzu2My2Ymp7WBjbSKg";
 
 // Initial Viewport
-const transitionInterpolator = new LinearInterpolator(['bearing']);
+const transitionInterpolator = new LinearInterpolator(["bearing"]);
 const DECK_VIEW_STATE = {
   longitude: 0,
   latitude: 40,
@@ -20,7 +20,7 @@ const DECK_VIEW_STATE = {
   pitch: 50,
   bearing: 30,
   continuousWorld: false,
-  noWrap: true,
+  noWrap: true
 };
 
 // Viewport Controls
@@ -30,14 +30,14 @@ const DECK_CONTROLS = {
   doubleClickZoom: false,
   touchZoom: false,
   touchRotate: false,
-  keyboard: false,
-}
+  keyboard: false
+};
 
 // Helper: Check if flight segment has both data points necessary
 let checkStartEnd = segment => {
   if (
-    segment.hasOwnProperty('start_airport_latitude') &&
-    segment.hasOwnProperty('end_airport_latitude')
+    segment.hasOwnProperty("start_airport_latitude") &&
+    segment.hasOwnProperty("end_airport_latitude")
   ) {
     return true;
   } else {
@@ -47,22 +47,23 @@ let checkStartEnd = segment => {
 
 // Helper: Check if home airport
 let checkHome = code => {
-  if (code === 'ZRH') {
+  if (code === "ZRH") {
     return [254, 127, 102, 120];
   } else {
     return [242, 111, 84, 120];
   }
-}
+};
 
 // Helper: Get travel distance in km
 let getDistance = (lat1, lon1, lat2, lon2) => {
-  var p = 0.017453292519943295;    // Math.PI / 180
+  var p = 0.017453292519943295; // Math.PI / 180
   var c = Math.cos;
-  var a = 0.5 - c((lat2 - lat1) * p)/2 + 
-          c(lat1 * p) * c(lat2 * p) * 
-          (1 - c((lon2 - lon1) * p))/2;
+  var a =
+    0.5 -
+    c((lat2 - lat1) * p) / 2 +
+    (c(lat1 * p) * c(lat2 * p) * (1 - c((lon2 - lon1) * p))) / 2;
   return 12742 * Math.asin(Math.sqrt(a)); // 2 * R; R = 6371 km
-}
+};
 
 class FlightsMap extends Component {
   // Set defaults
@@ -72,7 +73,7 @@ class FlightsMap extends Component {
     this.state = {
       flights: [],
       viewState: DECK_VIEW_STATE
-    }
+    };
 
     this._onLoad = this._onLoad.bind(this);
     this._onViewStateChange = this._onViewStateChange.bind(this);
@@ -83,8 +84,8 @@ class FlightsMap extends Component {
     this._rotateCamera();
   }
 
-  _onViewStateChange({viewState}) {
-    this.setState({viewState});
+  _onViewStateChange({ viewState }) {
+    this.setState({ viewState });
   }
 
   _rotateCamera() {
@@ -107,29 +108,33 @@ class FlightsMap extends Component {
 
   // Put together the flight objects from the raw Tripit data
   createFlight = (s, i) => {
-
     // Construct Flight Array
-    let singleFlight = []
-    singleFlight.from = []
-    singleFlight.from.name = s['start_airport_code'];
+    let singleFlight = [];
+    singleFlight.from = [];
+    singleFlight.from.name = s["start_airport_code"];
     singleFlight.from.coordinates = [
-      Number(s['start_airport_longitude']),
-      Number(s['start_airport_latitude'])
+      Number(s["start_airport_longitude"]),
+      Number(s["start_airport_latitude"])
     ];
-    singleFlight.from.color = checkHome(s['start_airport_code'])
+    singleFlight.from.color = checkHome(s["start_airport_code"]);
     singleFlight.to = [];
-    singleFlight.to.name = s['end_airport_code'];
+    singleFlight.to.name = s["end_airport_code"];
     singleFlight.to.coordinates = [
-      Number(s['end_airport_longitude']),
-      Number(s['end_airport_latitude'])
+      Number(s["end_airport_longitude"]),
+      Number(s["end_airport_latitude"])
     ];
-    singleFlight.to.color = checkHome(s['end_airport_code'])
-    singleFlight.distance = getDistance(s['start_airport_latitude'], s['start_airport_longitude'], s['end_airport_latitude'], s['end_airport_longitude'])
+    singleFlight.to.color = checkHome(s["end_airport_code"]);
+    singleFlight.distance = getDistance(
+      s["start_airport_latitude"],
+      s["start_airport_longitude"],
+      s["end_airport_latitude"],
+      s["end_airport_longitude"]
+    );
 
     // Add Array to State
     const pastFlights = this.state.flights;
-    let newFlights = update(pastFlights, {$push: [singleFlight]})
-    this.setState({flights: newFlights})
+    let newFlights = update(pastFlights, { $push: [singleFlight] });
+    this.setState({ flights: newFlights });
 
     // Distance
     // console.log(this.state.flights.reduce((total, obj) => obj.distance + total,0))
@@ -137,21 +142,20 @@ class FlightsMap extends Component {
 
   // Grab data
   fetchData = () => {
-    d3.json('./data/response.json', {
+    d3.json("./data/response.json", {
       headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json'
+        "Content-Type": "application/json",
+        Accept: "application/json"
       }
     }).then(data => {
       let counter = 0;
-      let runningFlights = []
-      for (let t in data['AirObject']) {
-        let s = data['AirObject'][t]['Segment'];
-        if (typeof s['start_airport_code'] !== 'undefined') {
+      let runningFlights = [];
+      for (let t in data["AirObject"]) {
+        let s = data["AirObject"][t]["Segment"];
+        if (typeof s["start_airport_code"] !== "undefined") {
           if (checkStartEnd(s)) {
             counter++;
             this.createFlight(s, counter);
-
           }
         } else {
           for (let f in s) {
@@ -162,21 +166,21 @@ class FlightsMap extends Component {
           }
         }
       }
-      this.setState({flight: runningFlights})
+      this.setState({ flight: runningFlights });
     });
-  }
+  };
 
   render() {
     const layers = [
       new ArcLayer({
-        id: 'flight-map',
+        id: "flight-map",
         data: this.state.flights,
         pickable: true,
         getStrokeWidth: 3,
-        getSourcePosition: d => d['from']['coordinates'],
-        getTargetPosition: d => d['to']['coordinates'],
-        getTargetColor: d => d['to']['color'], // 
-        getSourceColor: d => d['from']['color']
+        getSourcePosition: d => d["from"]["coordinates"],
+        getTargetPosition: d => d["to"]["coordinates"],
+        getTargetColor: d => d["to"]["color"], //
+        getSourceColor: d => d["from"]["color"]
       })
     ];
 
