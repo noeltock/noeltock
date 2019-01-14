@@ -1,5 +1,6 @@
 // Imports
 @import "./css/normalize.css";
+@import "./css/react-vis.css";
 
 // Colours
 $c-p: #ff8065;
@@ -144,11 +145,11 @@ nav {
 .content {
   font-family: $f-r;
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 200;
   line-height: 1.6;
   margin: 40px auto;
-  max-width: 600px;
+  max-width: 720px;
   background: #fff;
   z-index: 10;
 }

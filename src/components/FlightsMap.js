@@ -142,7 +142,7 @@ class FlightsMap extends Component {
 
   // Grab data
   fetchData = () => {
-    d3.json("./data/response.json", {
+    d3.json(process.env.PUBLIC_URL + "/data/response.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
