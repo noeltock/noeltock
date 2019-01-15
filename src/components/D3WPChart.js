@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  XYPlot,
+  FlexibleXYPlot,
   LineSeries,
   XAxis,
   YAxis,
@@ -149,40 +149,55 @@ const dataInterest = [
 class d3WPChart extends Component {
   render() {
     return (
-      <XYPlot height={300} width={700} xDomain={[2004, 2020]}>
-        <VerticalGridLines />
-        <HorizontalGridLines />
-        <XAxis title="Year" tickFormat={v => parseInt(v)} />
-        <YAxis
-          title="Market Share"
-          tickFormat={v => v + "%"}
-          orientation="left"
-          style={{ title: { fill: colors.sec }, ticks: { fill: colors.sec } }}
-        />
-        <YAxis
-          title="Consumer Interest"
-          tickFormat={v => parseInt(v * shareMax)}
-          orientation="right"
-          style={{ title: { fill: colors.pri }, ticks: { fill: colors.pri } }}
-          tickValues={[0, 5, 10, 15, 20, 25, 30]}
-        />
-        <LineSeries
-          data={dataShare}
-          style={{
-            stroke: colors.sec,
-            strokeWidth: 3
-          }}
-          curve={"curveMonotoneX"}
-        />
-        <LineSeries
-          data={dataInterest}
-          style={{
-            stroke: colors.pri,
-            strokeWidth: 3
-          }}
-          curve={"curveMonotoneX"}
-        />
-      </XYPlot>
+      <div className="d3-chart-wpshare">
+        <FlexibleXYPlot xDomain={[2004, 2020]} yDomain={[0, 35]}>
+          <VerticalGridLines />
+          <HorizontalGridLines />
+          <XAxis
+            title="Year"
+            tickFormat={v => parseInt(v)}
+            style={{
+              ticks: { fill: "#bbb", fontSize: 13 }
+            }}
+          />
+          <YAxis
+            title="Market Share"
+            tickFormat={v => v + "%"}
+            orientation="left"
+            style={{
+              title: { fill: colors.sec, fontWeight: 400, fontSize: 14 },
+              ticks: { fill: colors.sec, fontSize: 13 }
+            }}
+            tickValues={[0, 5, 10, 15, 20, 25, 30, 35]}
+          />
+          <YAxis
+            title="Consumer Interest"
+            tickFormat={v => parseInt(v * shareMax)}
+            orientation="right"
+            style={{
+              title: { fill: colors.pri, fontWeight: 400, fontSize: 14 },
+              ticks: { fill: colors.pri, fontSize: 13 }
+            }}
+            tickValues={[0, 5, 10, 15, 20, 25, 30]}
+          />
+          <LineSeries
+            data={dataShare}
+            style={{
+              stroke: colors.sec,
+              strokeWidth: 3
+            }}
+            curve={"curveMonotoneX"}
+          />
+          <LineSeries
+            data={dataInterest}
+            style={{
+              stroke: colors.pri,
+              strokeWidth: 3
+            }}
+            curve={"curveMonotoneX"}
+          />
+        </FlexibleXYPlot>
+      </div>
     );
   }
 }

@@ -191,3 +191,15 @@ ul.technologies {
     }
   }
 }
+
+// Charts
+
+.d3-chart-wpshare {
+  position: relative;
+  height: 400px;
+
+  > div > div {
+    position: relative;
+    height: 400px;
+  }
+}
