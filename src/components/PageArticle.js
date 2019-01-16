@@ -11,13 +11,16 @@ class PageArticle extends Component {
           through market share, a number hovering around 32% today. It's a
           deceiving number particularly because of how linear growth has been,
           implying in some ways that advances have been achieved through more of
-          the same - more features, single site-owners, plugins, themes,
-          WordCamps, etc. Whilst that's certainly part of the journey, I think
-          the undercurrent is shifting in more subtle ways.
+          the same  —
+          <em>
+            more features, single site-owners, plugins, themes, WordCamps, etc
+          </em>
+          . Whilst that's certainly part of the journey, I do wonder if we're
+          succumbing to casual narrative bias.
         </p>
         <D3WPChart />
         <p>
-          It's hard to find great data for WordPress as a whole - between
+          It's hard to find great data for WordPress as a whole . Between
           WordPress.org, WordPress.com, WooCommerce, Jetpack, it's a very
           confusing ecosystem as the WordPress brand is blurred between
           open-source and commercial endeavours. I do find Google Trends to be a
@@ -26,6 +29,18 @@ class PageArticle extends Component {
           bit since it peaked in 2012 (when market share was half of what it is
           today).
         </p>
+        <p>
+          Whilst the software has grown in adoption, it has become less relevant
+          as a brand to the end-consumer.
+        </p>
+        <p>
+          It was only yesterday that the WordPress ecosystem provided low
+          barriers to entry and masses found an easy way out of their day jobs,
+          becoming the web assemblers or blue collar workforce of WordPress.
+          Today, WordPress is surrounded by a new wave of internet technology,
+          workers are facing stiff price competition.
+        </p>
+        <p>The WordPress we used to know is dead.</p>
       </div>
     );
   }

@@ -161,9 +161,9 @@ class d3WPChart extends Component {
             }}
           />
           <YAxis
-            title="Market Share"
+            title="WordPress Market Share"
             tickFormat={v => v + "%"}
-            orientation="left"
+            orientation="right"
             style={{
               title: { fill: colors.sec, fontWeight: 400, fontSize: 14 },
               ticks: { fill: colors.sec, fontSize: 13 }
@@ -173,7 +173,7 @@ class d3WPChart extends Component {
           <YAxis
             title="Consumer Interest"
             tickFormat={v => parseInt(v * shareMax)}
-            orientation="right"
+            orientation="left"
             style={{
               title: { fill: colors.pri, fontWeight: 400, fontSize: 14 },
               ticks: { fill: colors.pri, fontSize: 13 }

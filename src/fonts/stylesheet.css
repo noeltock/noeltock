@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Dank Mono';
+    src: url('DankMono-Regular.eot');
+    src: url('DankMono-Regular.eot?#iefix') format('embedded-opentype'),
+        url('DankMono-Regular.woff2') format('woff2'),
+        url('DankMono-Regular.woff') format('woff'),
+        url('DankMono-Regular.svg#DankMono-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Dank Mono';
+    src: url('DankMono-Italic.eot');
+    src: url('DankMono-Italic.eot?#iefix') format('embedded-opentype'),
+        url('DankMono-Italic.woff2') format('woff2'),
+        url('DankMono-Italic.woff') format('woff'),
+        url('DankMono-Italic.svg#DankMono-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+

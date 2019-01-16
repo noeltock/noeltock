@@ -1,6 +1,7 @@
 // Imports
 @import "./css/normalize.css";
 @import "./css/react-vis.css";
+@import "./fonts/stylesheet.css";
 
 // Colours
 $c-p: #ff8065;
@@ -10,6 +11,7 @@ $c-b: #555555;
 // Fonts
 $f-h: "Sentinel SSm A", "Sentinel SSm B", serif;
 $f-r: "Ideal Sans A", "Ideal Sans B", sans-serif;
+$f-c: "Dank Mono", monospace;
 
 // Mobile Breakpoints
 
@@ -145,7 +147,7 @@ nav {
 .content {
   font-family: $f-r;
   font-weight: 300;
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 200;
   line-height: 1.6;
   margin: 40px auto;
@@ -197,9 +199,6 @@ ul.technologies {
 .d3-chart-wpshare {
   position: relative;
   height: 400px;
-
-  > div > div {
-    position: relative;
-    height: 400px;
-  }
+  font-family: $f-c;
+  padding-right: 42px;
 }
