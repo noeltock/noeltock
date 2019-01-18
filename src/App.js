@@ -12,6 +12,7 @@ import ReactGA from "react-ga";
 // Components
 import FlightsMap from "./components/FlightsMap";
 import Navigation from "./components/Navigation";
+
 //import Credits from "./components/Credits";
 
 // Components - Pages
