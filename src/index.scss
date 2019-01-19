@@ -144,6 +144,22 @@ nav {
 }
 
 // Content
+
+.content > *,
+.post-content > *,
+.wp-content > .post-content > pre > code.syntax {
+  display: block;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-content > h1 {
+  max-width: 900px;
+  text-align: center;
+}
+
+.post-content,
 .content {
   font-family: $f-r;
   font-weight: 300;
@@ -151,7 +167,6 @@ nav {
   font-weight: 200;
   line-height: 1.6;
   margin: 40px auto;
-  max-width: 720px;
   background: #fff;
   z-index: 10;
 }
@@ -201,4 +216,25 @@ ul.technologies {
   height: 400px;
   font-family: $f-c;
   padding-right: 42px;
+}
+
+// WordPress Content
+
+.wp-content {
+  .aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+  }
+}
+
+// Syntax Highlighter
+
+.wp-content > .post-content > pre {
+  width: auto;
+  max-width: 100%;
+}
+
+code.syntax {
+  font-size: 14px;
 }

@@ -1,16 +1,11 @@
 // Core
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  NavLink
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 
 // Components
-import FlightsMap from "./components/FlightsMap";
+// import FlightsMap from "./components/FlightsMap";
 import Navigation from "./components/Navigation";
 
 //import Credits from "./components/Credits";
@@ -19,6 +14,7 @@ import Navigation from "./components/Navigation";
 import PageHome from "./components/PageHome";
 import PageAbout from "./components/PageAbout";
 import PageBuilt from "./components/PageBuilt";
+import Post from "./components/Post";
 import PageArticle from "./components/PageArticle";
 import Page404 from "./components/Page404";
 
@@ -48,6 +44,15 @@ class App extends Component {
               <Route path="/about/" exact component={PageAbout} />
               <Route path="/built/" exact component={PageBuilt} />
               <Route path="/article/" exact component={PageArticle} />
+              <Route path="/web-design/*" exact component={Post} />
+              <Route path="/free-stuff/*" exact component={Post} />
+              <Route path="/blog/*" exact component={Post} />
+              <Route path="/portfolio/*" exact component={Post} />
+              <Route path="/photography/*" exact component={Post} />
+              <Route path="/seo/*" exact component={Post} />
+              <Route path="/startup-snippets/*" exact component={Post} />
+              <Route path="/remote-working/*" exact component={Post} />
+              <Route path="/startups/*" exact component={Post} />
               <Route component={Page404} />
             </Switch>
           </div>

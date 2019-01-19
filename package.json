@@ -13,7 +13,10 @@
   "dependencies": {
     "d3": "^5.7.0",
     "deck.gl": "^6.3.2",
+    "he": "^1.2.0",
     "immutability-helper": "^2.9.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.23.0",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -21,6 +24,7 @@
     "react-helmet": "^5.2.0",
     "react-map-gl": "^4.0.6",
     "react-router-dom": "^4.3.1",
+    "react-syntax-highlighter": "^10.1.2",
     "react-transition-group": "^2.5.2",
     "react-vis": "^1.11.6"
   },
