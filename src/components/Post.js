@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/styles/hljs";
+import { arduinoLight } from "react-syntax-highlighter/dist/styles/hljs";
 import TARS from "./Endurance";
 
 const WP_API = "http://localhost:8888/wp-json/wp/v2/";
@@ -56,8 +56,8 @@ class Post extends Component {
                 <SyntaxHighlighter
                   key={x.id}
                   language={x.shortcode}
-                  style={docco}
-                  codeTagProps={{ class: "syntax" }}
+                  style={arduinoLight}
+                  codeTagProps={{ className: "syntax" }}
                 >
                   {x.content}
                 </SyntaxHighlighter>

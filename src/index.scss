@@ -233,8 +233,13 @@ ul.technologies {
 .wp-content > .post-content > pre {
   width: auto;
   max-width: 100%;
+  background: #fafafa !important;
 }
 
+.react-syntax-highlighter-line-number,
 code.syntax {
   font-size: 14px;
+  margin: 0;
+  padding: 10px 0 30px;
+  line-height: 1.6;
 }
