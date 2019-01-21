@@ -3,10 +3,10 @@ import React, { Component } from "react";
 class Navigation extends Component {
   render() {
     return (
-      <div>
-        <p>adsda</p>
-        dsadasd
-        <p>dsdsa</p>
+      <div className="footer">
+        <div className="footer-content">
+          <div className="footer-block">Links</div>
+        </div>
       </div>
     );
   }

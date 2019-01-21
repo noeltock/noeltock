@@ -13,6 +13,7 @@
   "dependencies": {
     "d3": "^5.7.0",
     "deck.gl": "^6.3.2",
+    "express": "^4.16.4",
     "he": "^1.2.0",
     "immutability-helper": "^2.9.0",
     "lodash": "^4.17.11",

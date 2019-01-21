@@ -1,10 +1,29 @@
+// Basics
+
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { arduinoLight } from "react-syntax-highlighter/dist/styles/hljs";
+
+// Components
+import PostHeader from "./PostHeader";
+
+// Syntax Highlighter
+import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+import arduinoLight from "react-syntax-highlighter/dist/styles/hljs/arduino-light";
+import css from "react-syntax-highlighter/dist/languages/hljs/css";
+import php from "react-syntax-highlighter/dist/languages/hljs/php";
+import html from "react-syntax-highlighter/dist/languages/hljs/htmlbars";
+import js from "react-syntax-highlighter/dist/languages/hljs/javascript";
+
+// Helper
 import TARS from "./Endurance";
 
+// Settings
 const WP_API = "http://localhost:8888/wp-json/wp/v2/";
+
+SyntaxHighlighter.registerLanguage("php", php);
+SyntaxHighlighter.registerLanguage("css", css);
+SyntaxHighlighter.registerLanguage("html", html);
+SyntaxHighlighter.registerLanguage("js", js);
 
 class Post extends Component {
   constructor(props) {
@@ -44,12 +63,11 @@ class Post extends Component {
             />
             <meta property="og:type" content="article" />
           </Helmet>
-          <p>Testing</p>
-
-          <hr />
-          <h1>{this.state.post.title.rendered}</h1>
-          <p>Created: {TARS.prettyDate(this.state.post.date)}</p>
-          <p>Modified: {TARS.prettyDate(this.state.post.modified)}</p>
+          <PostHeader
+            title={this.state.post.title.rendered}
+            date={TARS.prettyDate(this.state.post.date)}
+            modified={TARS.prettyDate(this.state.post.modified)}
+          />
           {content.map(x => {
             if (x.type == "shortcode") {
               return (

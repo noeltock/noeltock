@@ -7,6 +7,7 @@ import ReactGA from "react-ga";
 // Components
 // import FlightsMap from "./components/FlightsMap";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 
 //import Credits from "./components/Credits";
 
@@ -57,6 +58,7 @@ class App extends Component {
             </Switch>
           </div>
         </Router>
+        <Footer />
       </div>
     );
   }

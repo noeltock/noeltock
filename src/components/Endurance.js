@@ -13,7 +13,7 @@ let TARS = (function() {
     return moment(x).format(format);
   };
 
-  // Clean Content
+  // Structure content into blocks
   methods.structuredContent = function(c) {
     let id = 0;
     let contents = [];
