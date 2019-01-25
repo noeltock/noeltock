@@ -16,9 +16,8 @@ let TARS = (function() {
   // Structure content into blocks
   methods.structuredContent = function(c) {
     let id = 0;
-    let contents = [];
     let blocks = c.split(/(\[.*?\].*?\[\/.*?\])/gsu);
-    for (let block of blocks) {
+    let contents = blocks.map(block => {
       let content = {};
       content.id = id++;
       if (/\[.*?\].*?\[\/.*?\]/gsu.test(block)) {
@@ -31,8 +30,8 @@ let TARS = (function() {
         content.type = "regular";
         content.content = block;
       }
-      contents.push(content);
-    }
+      return content;
+    });
     return contents;
   };
 
