@@ -1,35 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="720" height="340" viewBox="0 0 720 340" role="img" aria-labelledby="title desc">
-  <title id="title">Noel Tock working tree</title>
-  <desc id="desc">A compact working tree connects the agents, WordPress, and creative branches to Prompt Relay, Block Runner, and Asciara.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="350" viewBox="0 0 720 350" role="img" aria-labelledby="title desc">
+  <title id="title">Noel Tock's working tree</title>
+  <desc id="desc">A compact tree shows agent, WordPress, and creative branches connecting to Noel's projects.</desc>
   <style>
-    .ink { fill: #1f2328; }
-    .muted { fill: #57606a; }
-    .line { fill: none; stroke: #d0d7de; stroke-width: 1.5; stroke-linecap: square; }
-    .accent { fill: #0969da; }
-    .branch { fill: none; stroke: #0969da; stroke-width: 1.5; stroke-linecap: square; }
-    .label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 17px; }
-    .small { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; letter-spacing: .08em; }
-    .cursor { animation: scan 12s ease-in-out infinite; }
-    @keyframes scan { 0%, 14% { transform: translateY(0); } 48%, 62% { transform: translateY(170px); } 100% { transform: translateY(0); } }
-    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+    .ink { fill: #1f2328; } .muted { fill: #57606a; } .line { fill: none; stroke: #d0d7de; stroke-width: 1.5; }
+    .agent { fill: #0969da; stroke: #0969da; } .word { fill: #8250df; stroke: #8250df; } .creative { fill: #bf8700; stroke: #bf8700; }
+    .label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 16px; } .small { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; letter-spacing: .08em; }
+    .glyph { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; opacity: .42; } .signal { animation: wander 12s ease-in-out infinite; }
+    @keyframes wander { 0%, 14% { transform: translateY(0); } 48%, 62% { transform: translateY(170px); } 100% { transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .signal { animation: none; } }
   </style>
-  <rect width="720" height="340" fill="#f6f8fa"/>
-  <text x="42" y="42" class="small muted">HEAD / noeltock</text>
-  <text x="42" y="68" class="label ink">working-tree/</text>
-  <path d="M84 101V288M84 118H644M84 194H644M84 270H644" class="line"/>
-  <path d="M84 118H644M84 194H644M84 270H644" class="branch"/>
-  <circle cx="84" cy="118" r="4" class="accent"/>
-  <circle cx="84" cy="194" r="4" class="accent"/>
-  <circle cx="84" cy="270" r="4" class="accent"/>
-  <circle cx="644" cy="118" r="3" class="accent"/>
-  <circle cx="644" cy="194" r="3" class="accent"/>
-  <circle cx="644" cy="270" r="3" class="accent"/>
-  <g class="cursor"><rect x="81" y="101" width="6" height="20" class="accent"/></g>
-  <text x="112" y="113" class="label ink">agents/</text>
-  <text x="350" y="113" class="label muted">Prompt Relay</text>
-  <text x="112" y="189" class="label ink">wordpress/</text>
-  <text x="350" y="189" class="label muted">Block Runner</text>
-  <text x="112" y="265" class="label ink">creative/</text>
-  <text x="350" y="265" class="label muted">Asciara</text>
-  <text x="42" y="320" class="small muted">three branches · one body of work</text>
+  <rect width="720" height="350" fill="#f6f8fa"/>
+  <text x="42" y="36" class="small muted">HEAD / noeltock</text><text x="42" y="62" class="label ink">working-tree/</text><text x="560" y="36" class="glyph muted">. : + *</text>
+  <path d="M84 98V284M84 116H650M84 194H650M84 272H650" class="line"/>
+  <path d="M84 116H650" class="agent" fill="none" stroke-width="2"/><path d="M84 194H650" class="word" fill="none" stroke-width="2"/><path d="M84 272H650" class="creative" fill="none" stroke-width="2"/>
+  <circle cx="84" cy="116" r="5" class="agent"/><circle cx="84" cy="194" r="5" class="word"/><circle cx="84" cy="272" r="5" class="creative"/><circle cx="650" cy="116" r="4" class="agent"/><circle cx="650" cy="194" r="4" class="word"/><circle cx="650" cy="272" r="4" class="creative"/>
+  <g class="signal"><rect x="81" y="99" width="6" height="18" class="agent"/></g>
+  <text x="112" y="112" class="label ink">🤖 agents/</text><text x="380" y="112" class="label muted">Prompt Relay</text>
+  <text x="112" y="190" class="label ink">🧱 wordpress/</text><text x="380" y="190" class="label muted">Block Runner · Aphelion</text>
+  <text x="112" y="268" class="label ink">✨ creative/</text><text x="380" y="268" class="label muted">Asciara</text>
+  <text x="42" y="326" class="small muted">three branches · one body of work</text>
 </svg>

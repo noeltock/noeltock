@@ -78,22 +78,17 @@
       a { color: var(--link); text-decoration: none; }
       a:hover { text-decoration: underline; }
       code { padding: .2em .4em; border-radius: 6px; background: var(--code); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 85%; }
-      hr { height: .25em; margin: 24px 0; padding: 0; border: 0; background: var(--border); }
-      table { display: block; width: max-content; max-width: 100%; margin: 0 0 16px; overflow: auto; border-spacing: 0; border-collapse: collapse; }
-      th, td { padding: 6px 13px; border: 1px solid var(--border); }
-      th { font-weight: 600; background: var(--canvas); }
-      tr { background: var(--surface); }
       picture, picture img { display: block; width: 100%; height: auto; }
       picture { margin: 24px 0; overflow: hidden; border: 1px solid var(--border); border-radius: 6px; }
-      .tree-line { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; line-height: 1.75; }
-      .tree-line + .tree-line { margin-top: 0; }
+      ul { padding-left: 2em; }
+      li + li { margin-top: 6px; }
       details { margin-top: 24px; }
       summary { cursor: pointer; }
 
       @media (max-width: 640px) {
         .preview-bar { padding: 12px 16px; }
         main { margin: 0 12px 24px; padding: 20px 16px; }
-        .tree-line { font-size: 12px; overflow-wrap: anywhere; }
+        li { overflow-wrap: anywhere; }
       }
     </style>
   </head>
@@ -104,24 +99,29 @@
     </div>
     <main>
       <article class="markdown-body">
-        <h1>Noel Tock</h1>
-        <p>I build tools for WordPress and for working with AI.</p>
-        <p>Chief Growth Officer at Human Made. <a href="https://noeltock.com/ai">AI field notes</a> · <a href="https://www.linkedin.com/in/noeltock/">LinkedIn</a></p>
+        <h1>Hey, I'm Noel 👋</h1>
+        <p>I build at the edge of WordPress × AI — tools that help agents do real work.</p>
+        <p><a href="https://humanmade.com/">CGO at Human Made</a> · <a href="https://noeltock.com/ai">AI notes</a> · <a href="https://www.linkedin.com/in/noeltock/">LinkedIn</a></p>
         <picture>
           <source id="working-tree-mobile" media="(max-width: 640px)" srcset="../assets/working-tree-mobile-light.svg">
           <img id="working-tree" src="../assets/working-tree-light.svg" alt="Working tree connecting agents, WordPress, and creative work to Prompt Relay, Block Runner, and Asciara.">
         </picture>
-        <p><code>agents/</code> — <a href="https://github.com/noeltock/prompt-relay">Prompt Relay</a>: a plain-Markdown routing template mapping lead, coding, advisor, QA, and runner roles to suitable models for Claude Code and Codex, with verification and evals.</p>
-        <p><code>wordpress/</code> — <a href="https://github.com/humanmade/block-runner">Block Runner</a>: converts generated HTML into nested native Gutenberg blocks and validates output against headless Gutenberg. <a href="https://www.accelerateplugin.com/block-runner/">Official page</a>.</p>
-        <p><code>creative/</code> — <a href="https://github.com/noeltock/asciara">Asciara</a>: turns images into structured ASCII assets, calm animated media, and self-contained web heroes using luminance and edge-aware glyph rendering.</p>
-        <h2>Wider tree</h2>
-        <p class="tree-line"><code>work/</code></p>
-        <p class="tree-line">├── <code>agents/</code> — <a href="https://github.com/noeltock/codex-review">Codex Review</a>: routing code review to Codex from Claude.</p>
-        <p class="tree-line">├── <code>wordpress/</code> — <a href="https://github.com/humanmade/aphelion">Aphelion</a>: a local flight recorder for AI agents working on WordPress; <a href="https://github.com/humanmade/wesper">Wesper</a>: read-only WordPress context manifests; <a href="https://github.com/humanmade/accelerate-ai-toolkit">Accelerate AI Toolkit</a>: insights, experimentation, and personalization for WordPress.</p>
-        <p class="tree-line">└── <code>field-notes/</code> — <a href="https://www.accelerateplugin.com/blog/the-5-levels-of-agentic-wordpress/">The 5 Levels of Agentic WordPress</a>: article.</p>
+        <h2>What I'm making 🛠️</h2>
+        <ul>
+          <li>🧭 <a href="https://github.com/noeltock/prompt-relay">Prompt Relay</a> — the right work to the right model.</li>
+          <li>🧱 <a href="https://github.com/humanmade/block-runner">Block Runner</a> — generated HTML in; native Gutenberg blocks out.</li>
+          <li>🛰️ <a href="https://github.com/humanmade/aphelion">Aphelion</a> — a flight recorder for WordPress agents.</li>
+          <li>✨ <a href="https://github.com/noeltock/asciara">Asciara</a> — ASCII with a little soul.</li>
+        </ul>
         <details>
-          <summary>Earlier work</summary>
-          <p><a href="https://github.com/noeltock/tiltShift.js">tiltShift.js</a> is a jQuery plugin using CSS3 filters to replicate the tilt-shift effect.</p>
+          <summary>More from the tree 🌳</summary>
+          <ul>
+            <li><a href="https://github.com/noeltock/codex-review">Codex Review</a> &mdash; review routing.</li>
+            <li><a href="https://github.com/humanmade/wesper">Wesper</a> &mdash; WordPress context.</li>
+            <li><a href="https://github.com/humanmade/accelerate-ai-toolkit">Accelerate AI Toolkit</a> &mdash; WordPress experiments.</li>
+            <li><a href="https://www.accelerateplugin.com/blog/the-5-levels-of-agentic-wordpress/">The 5 Levels of Agentic WordPress</a> &mdash; field note.</li>
+            <li><a href="https://github.com/noeltock/tiltShift.js">tiltShift.js</a> &mdash; CSS filters.</li>
+          </ul>
         </details>
       </article>
     </main>

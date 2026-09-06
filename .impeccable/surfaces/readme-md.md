@@ -21,12 +21,12 @@ related_targets: []
 
 **THESIS:** Noel's WordPress, agent, and creative work is one personal working tree; refuse the badge dashboard and miniature portfolio site.
 
-**OWN-WORLD:** GitHub-native file notation, graphite light/dark grounds, hairline branches, restrained mono text, and one cool signal accent. Animation is slow and structural.
+**OWN-WORLD:** GitHub-native file notation, graphite light/dark grounds, hairline branches, restrained mono text, emoji-led personality, and three restrained branch accents. Animation is slow and structural.
 
 **STORY:** Meet Noel, understand the three branches of his work, then open one real project or the AI field notes.
 
-**FIRST VIEWPORT:** Name and one plain sentence lead; a shallow full-width working-tree SVG follows; Prompt Relay, Block Runner, and Asciara remain visible immediately below it.
+**FIRST VIEWPORT:** A warm emoji-led name, two compact lines, and a shallow full-width working-tree SVG lead; the four scannable project links begin immediately below it.
 
-**FORM:** Top-ranked personal working tree, explicitly chosen by the user and sharpened by the advisor; seed `eb1e51d1`. Raise: one line carries the structure; states remain measured; colour is reserved.
+**FORM:** Top-ranked personal working tree, explicitly chosen by the user and sharpened by the advisor; seed `eb1e51d1`. Raise: meaningful emoji labels and a quiet glyph texture add character while the structure remains legible without colour.
 
 **FINISH:** unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
