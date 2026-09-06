@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="220" viewBox="0 0 960 220" role="img" aria-labelledby="title desc">
+  <title id="title">Noel Tock working tree</title>
+  <desc id="desc">A shallow working tree connects the agents, WordPress, and creative branches to Prompt Relay, Block Runner, and Asciara.</desc>
+  <style>
+    .ink { fill: #e6edf3; }
+    .muted { fill: #8b949e; }
+    .line { fill: none; stroke: #30363d; stroke-width: 1.5; stroke-linecap: square; }
+    .accent { fill: #58a6ff; }
+    .branch { fill: none; stroke: #58a6ff; stroke-width: 1.5; stroke-linecap: square; }
+    .label { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+    .small { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; letter-spacing: .08em; }
+    .cursor { animation: scan 12s ease-in-out infinite; }
+    @keyframes scan { 0%, 14% { transform: translateX(0); } 48%, 62% { transform: translateX(760px); } 100% { transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+  </style>
+  <rect width="960" height="220" fill="#0d1117"/>
+  <text x="36" y="39" class="small muted">HEAD / noeltock</text>
+  <text x="36" y="63" class="label ink">working-tree/</text>
+  <path d="M36 118H924M180 118V80H352M450 118V156H624M720 118V80H894" class="line"/>
+  <path d="M180 80H352M450 156H624M720 80H894" class="branch"/>
+  <circle cx="180" cy="118" r="4" class="accent"/>
+  <circle cx="450" cy="118" r="4" class="accent"/>
+  <circle cx="720" cy="118" r="4" class="accent"/>
+  <circle cx="352" cy="80" r="3" class="accent"/>
+  <circle cx="624" cy="156" r="3" class="accent"/>
+  <circle cx="894" cy="80" r="3" class="accent"/>
+  <g class="cursor"><rect x="52" y="115" width="20" height="6" class="accent"/></g>
+  <text x="196" y="78" class="label ink">agents/</text>
+  <text x="196" y="101" class="label muted">Prompt Relay</text>
+  <text x="466" y="154" class="label ink">wordpress/</text>
+  <text x="466" y="177" class="label muted">Block Runner</text>
+  <text x="736" y="78" class="label ink">creative/</text>
+  <text x="736" y="101" class="label muted">Asciara</text>
+  <text x="36" y="198" class="small muted">three branches · one body of work</text>
+</svg>
