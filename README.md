@@ -1,30 +1,11 @@
-# Hey, I'm Noel 👋
+Building with agents every day, for my own work and at [Human Made](https://humanmade.com/). More at [noeltock.com/ai](https://noeltock.com/ai) · [LinkedIn](https://www.linkedin.com/in/noeltock/)
 
-I build at the edge of WordPress × AI — tools that help agents do real work.
+<a href="https://www.accelerateplugin.com/block-runner"><img src="assets/cards/block-runner.png" width="100%" alt="Block Runner: generated HTML in, native validated Gutenberg blocks out."></a>
 
-[CGO at Human Made](https://humanmade.com/) · [AI notes](https://noeltock.com/ai) · [LinkedIn](https://www.linkedin.com/in/noeltock/)
+<a href="https://www.accelerateplugin.com/blog/the-5-levels-of-agentic-wordpress/"><img src="assets/cards/article.png" width="50%" alt="The 5 Levels of Agentic WordPress."></a><a href="https://www.accelerateplugin.com/wordpress-ai-map/"><img src="assets/cards/map.png" width="50%" alt="WordPress AI map: open tools that let agents write, test and ship on WordPress."></a>
 
-<picture>
-  <source media="(prefers-color-scheme: dark) and (max-width: 640px)" srcset="assets/working-tree-mobile-dark.svg">
-  <source media="(max-width: 640px)" srcset="assets/working-tree-mobile-light.svg">
-  <source media="(prefers-color-scheme: dark)" srcset="assets/working-tree-dark.svg">
-  <img src="assets/working-tree-light.svg" alt="Working tree with agent, WordPress, and creative branches connecting to Noel's projects.">
-</picture>
+<a href="https://humanmade.com/word-on-the-future-archive/"><img src="assets/cards/wotf.png" width="100%" alt="Word on the Future: where enterprise WordPress is heading."></a>
 
-## What I'm making 🛠️
+<a href="https://npmx.dev/package/wesper"><img src="assets/cards/wesper.png" width="50%" alt="Wesper: read-only WordPress context for agents."></a><a href="https://github.com/noeltock/entropy"><img src="assets/cards/entropy.png" width="50%" alt="entropy: finds what coding agents leave running on a Mac."></a>
 
-- 🧭 [Prompt Relay](https://github.com/noeltock/prompt-relay) — the right work to the right model.
-- 🧱 [Block Runner](https://github.com/humanmade/block-runner) — generated HTML in; native Gutenberg blocks out.
-- 🛰️ [Aphelion](https://github.com/humanmade/aphelion) — a flight recorder for WordPress agents.
-- ✨ [Asciara](https://github.com/noeltock/asciara) — ASCII with a little soul.
-
-<details>
-<summary>More from the tree 🌳</summary>
-
-- [Codex Review](https://github.com/noeltock/codex-review) — review routing.
-- [Wesper](https://github.com/humanmade/wesper) — WordPress context.
-- [Accelerate AI Toolkit](https://github.com/humanmade/accelerate-ai-toolkit) — WordPress experiments.
-- [The 5 Levels of Agentic WordPress](https://www.accelerateplugin.com/blog/the-5-levels-of-agentic-wordpress/) — field note.
-- [tiltShift.js](https://github.com/noeltock/tiltShift.js) — CSS filters.
-
-</details>
+<a href="https://github.com/noeltock/build-claude-mod"><img src="assets/cards/mod.png" width="100%" alt="build-claude-mod: a Claude Code skill for building mods."></a>
