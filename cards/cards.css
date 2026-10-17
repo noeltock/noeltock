@@ -1,0 +1,66 @@
+/* Our overrides, loaded after site.css (the site's own rules assume its 2-column subgrid page). */
+:root { --card-h: 360px; }
+
+html, body, main { background: transparent !important; }
+main { display: block !important; min-height: 0 !important; }
+
+/* README order comes from the markup: wide / half+half / wide / half+half / wide */
+.stage { display: grid; grid-template-columns: 424px 424px; gap: 24px; width: 872px; margin: 0; padding: 0; }
+.stage > article { height: var(--card-h) !important; min-height: 0; margin: 0 !important; display: flex; flex-direction: column; grid-row: auto !important; }
+.stage > article.ai-module__B3zMlG__wide { grid-column: 1 / -1; }
+.stage > article figure { display: flex; flex-direction: column; flex: 1 1 0; min-height: 0; height: auto; grid-row: auto; }
+.stage > article figcaption { display: block; flex: none; grid-row: auto; margin-top: 0; }
+
+/* The visual area takes whatever height the caption leaves and crops to it. */
+.stage > article figure > :first-child { flex: 1 1 0; min-height: 0 !important; height: auto !important; max-height: none !important; overflow: hidden; position: relative; }
+
+/* wotf: static frame of the colony animation, cropped around title + tagline; label moved clear of the tagline */
+.stage .ai-module__B3zMlG__demoFrame { width: 100%; height: 100%; object-fit: cover; object-position: 50% 48%; }
+.stage .ai-module__B3zMlG__wotfProject .ai-module__B3zMlG__mediaLabel { left: auto; right: 0; }
+
+/* block runner: fit the hero preview into the shorter stage */
+.stage .demos-module__r6Ff5a__blockDemo { display: grid; }
+.stage .demos-module__r6Ff5a__blockStage { min-height: 0; padding: 0; }
+.stage .demos-module__r6Ff5a__heroPreview { inset: 16px auto 16px 24px; height: auto; padding: 0 24px; }
+.stage .demos-module__r6Ff5a__heroContent { width: 520px; }
+.stage .demos-module__r6Ff5a__heroContent h3 { font-size: 34px; white-space: nowrap; }
+.stage .demos-module__r6Ff5a__heroIntro { margin-bottom: 8px; }
+.stage .demos-module__r6Ff5a__heroDescription { max-width: none; margin-top: 10px; }
+.stage .demos-module__r6Ff5a__heroActions { margin-top: 14px; }
+
+/* build-claude-mod: compact both panes so the steps and the chat fit (placeholder band and composer hidden) */
+.stage .demos-module__r6Ff5a__modDemo { height: 100%; }
+.stage .demos-module__r6Ff5a__modTerminal .demos-module__r6Ff5a__windowBar { padding: 8px 16px; }
+.stage .demos-module__r6Ff5a__modSession { padding: 8px 0 0; }
+.stage .demos-module__r6Ff5a__modCommand { padding: 5px 18px; }
+.stage .demos-module__r6Ff5a__modSteps { margin-top: 8px; }
+.stage .demos-module__r6Ff5a__modSteps li { height: 24px; }
+.stage .demos-module__r6Ff5a__modStage { padding: 12px 22px 0; }
+.stage .demos-module__r6Ff5a__modApp { margin-top: 10px; border-bottom: 0; border-radius: 14px 14px 0 0; }
+.stage .demos-module__r6Ff5a__modDesktop { justify-content: flex-start; padding: 14px 18px; }
+.stage .demos-module__r6Ff5a__modContext { -webkit-mask-image: none; mask-image: none; }
+.stage .demos-module__r6Ff5a__modBand, .stage .demos-module__r6Ff5a__modPrompt { display: none; }
+
+/* entropy: drop the window chrome and the closing prompt, tighten rows so the whole table and totals fit */
+.stage .demos-module__r6Ff5a__entropy { height: 100%; min-height: 0; max-height: none; }
+.stage .demos-module__r6Ff5a__entropy .demos-module__r6Ff5a__windowBar { display: none; }
+.stage .demos-module__r6Ff5a__entropyBody { padding: 10px 0 0; gap: 6px; }
+.stage .demos-module__r6Ff5a__entropyPrompt { padding: 3px 18px; }
+.stage .demos-module__r6Ff5a__entropyOut { gap: 2px; }
+.stage .demos-module__r6Ff5a__entropyTable { margin: 4px 0; padding: 4px 0; }
+.stage .demos-module__r6Ff5a__entropyRow { padding: 0 10px; }
+.stage .demos-module__r6Ff5a__entropyBody > .demos-module__r6Ff5a__entropyPrompt:last-child { display: none; }
+
+/* Shared footer (title, one-liner, link chips): identical compact spacing and type on every card. */
+.stage .ai-module__B3zMlG__captionHeading { padding: 14px 18px 0; }
+.stage .ai-module__B3zMlG__caption h2 { font-size: 20px; line-height: 1.15; }
+.stage .ai-module__B3zMlG__caption p { max-width: none; padding: 4px 18px 10px; font-size: 13px; line-height: 1.4; }
+.stage .ai-module__B3zMlG__footerBottom { padding: 0 18px 14px; gap: 8px 16px; }
+.stage .ai-module__B3zMlG__destinations { gap: 6px 8px; }
+.stage .ai-module__B3zMlG__outbound { min-height: 28px; gap: 6px; padding: 0 8px 0 0; font-size: 12px; line-height: 16px; }
+.stage .ai-module__B3zMlG__linkIcon { width: 28px; height: 28px; border-radius: 5px; }
+.stage .ai-module__B3zMlG__linkIcon svg { width: 14px; height: 14px; }
+.stage .ai-module__B3zMlG__outbound .ai-module__B3zMlG__upRight { width: 10px; height: 10px; }
+.stage .ai-module__B3zMlG__credit { font-size: 12px; line-height: 16px; gap: 3px; }
+.stage .ai-module__B3zMlG__credit img { width: 12px; height: 12px; }
+.stage .ai-module__B3zMlG__mediaLabel { padding: 3px 6px; font-size: 11px; line-height: 16px; }
